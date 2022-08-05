@@ -76,7 +76,7 @@ async function run() {
       res.send(result)
     })
 
-    // delete a service
+    // delete a service //
     app.delete("/service/:id", async (req, res) => {
       const id = req.params.id
       const query = { _id: ObjectId(id) }
@@ -84,14 +84,14 @@ async function run() {
       res.send(result)
     })
 
-    // post orders api
+    // post orders api//
     app.post("/orders", async (req, res) => {
       const newOrder = req.body
       const result = await orderCollection.insertOne(newOrder)
       res.send(result)
     })
 
-    // get all order api
+    // get all order api //
     app.get("/orders", async (req, res) => {
       const email = req.query.email
       const query = {}
